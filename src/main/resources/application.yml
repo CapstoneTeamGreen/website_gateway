@@ -1,0 +1,18 @@
+server:
+  port: 8079
+
+eureka:
+    instance:
+      instance-id: ${spring.application.name}
+
+spring:
+  application:
+    name: gateway
+
+  cloud:
+    gateway:
+      routes:
+        - id: projects
+          uri: lb://projects
+          predicates:
+            - Path=/projects/**
