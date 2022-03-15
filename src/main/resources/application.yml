@@ -16,3 +16,18 @@ spring:
           uri: lb://projects
           predicates:
             - Path=/projects/**
+      default-filters:
+        - TokenRelay
+  security:
+    oauth2:
+      client:
+        provider:
+          keycloak_provider:
+            issuer-uri: http://keycloak:8080/auth/realms/website-api-gateway
+        registration:
+          keycloak-website-api-gateway:
+            provider: keycloak_provider
+            client-id: website-api-gateway
+            client-secret: VE9T4sHVIApRM2cUR9MZ8PgVAsMv6PEi
+            authorization-grant-type: authorization_code
+            redirect-uri: "{baseUrl}/login/oauth2/code/website-api-gateway"
