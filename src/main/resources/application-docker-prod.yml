@@ -1,0 +1,6 @@
+eureka:
+  instance:
+    hostname: 20.104.197.163
+  client:
+    service-url:
+      defaultZone: http://20.104.197.163:8761/eureka
