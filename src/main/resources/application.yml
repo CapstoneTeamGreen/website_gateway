@@ -24,3 +24,8 @@ spring:
           uri: lb://projects
           predicates:
             - Path=/projects/**
+
+        - id: profiles
+          uri: lb://profiles
+          predicates:
+            - Path=/profiles/**
